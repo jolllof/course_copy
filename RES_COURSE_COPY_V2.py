@@ -19,11 +19,11 @@ import cx_Oracle
 
 
 #DEFINITIONS
-INSTANCE = environ['L2CAN_URL'] +'%s'
+INSTANCE = environ.get('L2CAN') +'%s'
 ACCOUNT_URL = INSTANCE  %'accounts/'
 COURSE_URL = INSTANCE %'courses/'
 SIS_USER_URL = INSTANCE % 'users/sis_user_id:'
-TOKEN = environ['L2CAN_TOKEN']
+TOKEN = environ.get('L2CAN_TOKEN')
 HEADER = {'Authorization': 'Bearer %s' % TOKEN}
 desktop = path.join(path.join(environ['USERPROFILE']), 'Desktop\\')
 masterlist = desktop + 'source_file.csv'
